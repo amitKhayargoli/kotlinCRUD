@@ -14,16 +14,40 @@ class UserRepositoryImpl :UserRepository {
     val reference : DatabaseReference = database.reference.child("users")
 
     override fun login(email: String, password: String, callback: (Boolean, String) -> Unit) {
-        TODO("Not yet implemented")
+    auth.signInWithEmailAndPassword(email,password).addOnCompleteListener{
+        if(it.isSuccessful){
+            callback(true,"Login Successful")
+        }
+        else{
+            callback(false,it.exception?.message.toString());
+        }
+    }
     }
 
     override fun signup(email: String, password: String, callback: (Boolean, String) -> Unit) {
-        TODO("Not yet implemented")
+
+        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener{
+            if(it.isSuccessful){
+                callback(true,"Login Successful")
+            }
+            else{
+                callback(false,it.exception?.message.toString());
+            }
+        }
     }
 
     override fun forgetPassword(email: String, callback: (Boolean, String) -> Unit) {
-        TODO("Not yet implemented")
-    }
+        auth.sendPasswordResetEmail(email).addOnCompleteListener{
+            if(it.isSuccessful){
+                callback(true,"Reset Email Sent Successfully")
+
+            }
+            else{
+                callback(false,it.exception?.message.toString());
+
+            }
+        }
+        }
 
     override fun addUserToDatabase(
         userId: String,
