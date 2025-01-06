@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "371165932677",
+    "project_id": "android-dcb82",
+    "storage_bucket": "android-dcb82.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371165932677:android:85077794c5033abdbe4dec",
+        "android_client_info": {
+          "package_name": "com.example.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzL9F_7fVpCc-ccowN9jabgCwhUNXkKF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
